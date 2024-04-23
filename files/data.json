@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "message": "Success",
+  "data": [
+    { "id": "1", "name": "John", "age": 30, "email": "john@example.com" },
+    { "id": "2", "name": "Jane", "age": 25, "email": "jane@example.com" },
+    { "id": "3", "name": "Bob", "age": 35, "email": "bob@example.com" }
+  ]
+}
