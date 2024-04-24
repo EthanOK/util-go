@@ -1,0 +1,60 @@
+info:
+  contact: {}
+paths:
+  /getAuthorization:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: name
+        in: query
+        name: name
+        required: true
+        type: string
+      - description: password
+        in: query
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code","data"}
+          schema:
+            type: string
+      tags:
+      - Token
+  /parseAuthorization:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: authorization
+        in: query
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code","data"}
+          schema:
+            type: string
+      tags:
+      - Token
+  /ping:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code","data"}
+          schema:
+            type: string
+      tags:
+      - Ping
+swagger: "2.0"

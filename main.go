@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"util-go/router"
 	"util-go/tests"
 )
 
@@ -16,4 +17,7 @@ func main() {
 
 	tests.TestParseJSON()
 
+	r := router.Router()
+
+	r.Run(":8090")
 }
