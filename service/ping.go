@@ -1,8 +1,8 @@
 package service
 
 import (
-	"fmt"
 	"strings"
+	"util-go/utils"
 
 	"github.com/gin-gonic/gin"
 )
@@ -23,9 +23,18 @@ func Ping(c *gin.Context) {
 		})
 		return
 	}
+
 	token := strings.Fields(auth)[1]
-	fmt.Println("token:", token)
-	// 处理Ping请求
+	_, err := utils.ParseToken(token)
+
+	if err != nil {
+		c.JSON(401, gin.H{
+			"code": 401,
+			"data": err.Error(),
+		})
+		return
+	}
+
 	c.JSON(200, gin.H{
 		"code": 200,
 		"data": "pong",
